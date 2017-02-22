@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Response Headers AJAX Demo</title>
+
+    <script>
+        window.onload = function () {
+
+                var xhr = new XMLHttpRequest();
+
+                // this function is called when the 'send' method is called as it changes the state
+                xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+
+                            document.getElementById("grh").innerHTML = "The last modified date is " +
+                                this.getResponseHeader("Last-Modified");
+
+
+                            document.getElementById("garh").innerHTML = "All response headers: " +
+                                this.getAllResponseHeaders();
+
+                        } // end if
+
+
+                        xhr.open("GET", "helloworld.txt", true);
+                        xhr.send();
+
+                    } // end onload
+    </script>
+</head>
+
+<body>
+    <h1>Response Headers AJAX Demo</h1>
+
+    <p>
+        The getResponseHeader() function is used to return specific header information from a resource, like length, server-type, content-type, last-modified, etc:
+    </p>
+
+
+    <p>
+        The getAllResponseHeaders() function returns all the header information of a resource, like length, server-type, content-type, last-modified, etc:
+    </p>
+
+    <hr>
+
+    <p id="grh"> </p>
+
+    <p id="garh"> </p>
+
+
+
+</body>
+
+</html>

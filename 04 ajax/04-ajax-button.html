@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+    This page shows how to make a basic ajax request
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>AJAX Basics</title>
+
+    <style>
+        body {
+            font-size: 100%
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+
+    <script>
+        function getData() {
+
+            // create instance of XMLHttpRequest object
+            var xhr = new XMLHttpRequest();
+
+            // the readystatechange event is fired
+            //every time the readyState property of the XMLHttpRequest changes
+            xhr.onreadystatechange = function () {
+
+                    // 4 = request is completed, 200 = request was fulfilled
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("response").innerHTML =
+                            this.responseText; // returns a string as a response
+                    } // end if
+
+
+                    // if the readyState and status are not okay
+                    else {
+                        document.getElementById("demo").innerHTML = "Sorry error with request";
+                    } // end else
+
+
+                } //  end function
+
+            xhr.open("GET", "sample.txt", true);
+            xhr.send();
+
+        } // end getData()
+
+        function init() {
+
+            // event listener for the button
+            document.getElementById('btn').addEventListener('click', getData, false);
+        }
+
+
+        // loads the function init after DOM has been loaded
+        document.addEventListener("DOMContentLoaded", init, false);
+    </script>
+
+
+</head>
+
+<body>
+    <h1>Demonstration: Using AJAX to request data from a text file when button is clicked</h1>
+
+    <h2>The response is returned below in the paragraph</h2>
+
+    <p id="response"> </p>
+
+    <form>
+        <input type="button" id="btn" value="Click to Retrieve Data">
+    </form>
+
+</body>
+
+</html>

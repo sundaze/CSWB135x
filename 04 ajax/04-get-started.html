@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Vecta Corp.</title>
+    <link href="main.css" rel="stylesheet">
+
+    <script>
+        window.onload = function () {
+
+                var xhr = new XMLHttpRequest();
+
+                // this function is called when the 'send' method is called as it changes the state
+                xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+
+                            // test the status and state just to see them by using the different variables
+                            // for the innerHTML property
+
+                            var theStatus = this.status;
+                            var theReadyState = this.readyState;
+                            var theResponseText = "This is the response text";
+
+                            document.getElementById("team").innerHTML = theResponseText;
+                        } // end if
+
+
+                        // if the readyState and status are not okay
+                        else {
+                            document.getElementById("team").innerHTML = "Sorry error with request";
+                        } // end else
+
+                    } // end function                
+
+                xhr.open("GET", "team.xml", true);
+                xhr.send();
+
+            } // end onload
+    </script>
+</head>
+
+<body>
+    <header></header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>This examples is on page 386 second edition and page 413 first edition</h1>
+        <h2>The Vecta Corp. Management Team</h2>
+        <h3>
+           How to get started and test as you go - see if you can 'hard code' the response text,
+           so that you know you can display something on the page
+        </h3>
+
+        <div id="team"></div>
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>

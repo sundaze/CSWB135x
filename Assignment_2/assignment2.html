@@ -1,0 +1,107 @@
+<!-- 
+Neal Domingo
+CSWB 135
+Spring 2017
+Assignment 2
+
+
+     this is based on the starter file for assignment 2
+     cswb135_starter_file_assignment_2.html 
+     
+     Copyright Teresa Pelkie, 2017, Reproduction or Distribution on the Web is Prohibited
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Vecta Corp.</title>
+    <link href="main.css" rel="stylesheet">
+
+    <style>
+        form {
+            margin: 25px auto;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+                var xhr = new XMLHttpRequest();
+
+
+
+                // this function is called when the 'send' method is called as it changes the state
+                xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+
+                            xmlDoc = xhr.responseXML;
+                            var team = xmlDoc.getElementsByTagName("teammember");
+                            var html = "";
+                            for (i = 0; i < team.length; i++) {
+                                html +=
+                                    xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
+                                    xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
+                                    xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue + "<br><br>";
+                            } // end for loop
+
+                            document.getElementById("team").innerHTML = html;
+
+                        } // end if
+
+                        // if the readyState and status are not okay
+                        else {
+                            document.getElementById("team").innerHTML = "Sorry error with request";
+                        } // end else
+
+                        xhr.open("GET", "team.xml", true);
+                        xhr.send();
+
+
+                    } // end function
+
+
+            } // end onload
+    </script>
+</head>
+
+<body>
+    <header></header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>This example is from page 386 second edition and page 413 first edition</h1>
+        <h2>The Vecta Corp. Management Team</h2>
+
+        <form>
+            Choose a team member to view member details:
+            <select name="member" id="member">
+                <option value="0">Agnes</option>
+                <option value="1">Damon</option>
+                <option value="2">Herbert</option>
+                <option value="3">Mike</option>
+                <option value="4">Wilbur</option>
+            </select>
+            <br>
+            <br>
+
+            <input type="button" value="Show Team Member Information" id="btn">
+        </form>
+
+        <div id="team"></div>
+    </main>
+
+    <footer></footer>
+</body>
+
+</html>
