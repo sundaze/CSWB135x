@@ -43,14 +43,14 @@ Assignment 2
                   if (xhr.readyState == 4 && xhr.status == 200) {
                       xmlDoc = xhr.responseXML;
                       var team = xmlDoc.getElementsByTagName("teammember");
-                      var html = "";
-                      for (i = 0; i < team.length; i++) {
-                           html +=
-                              xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
-                              xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
-                              xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue + "<br><br>";
+                      var html = // "";
+  //                    for (i = 0; i < team.length; i++) {
+//                           html +=
+                              xmlDoc.getElementsByTagName("name")[memValue].childNodes[0].nodeValue + "<br>" +
+                              xmlDoc.getElementsByTagName("title")[memValue].childNodes[0].nodeValue + "<br>" +
+                              xmlDoc.getElementsByTagName("bio")[memValue].childNodes[0].nodeValue + "<br><br>";
 
-                       } // end for loop
+//                       } // end for loop
 
                        document.getElementById("team").innerHTML = html;
 
