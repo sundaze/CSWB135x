@@ -41,16 +41,17 @@ Assignment 2
             // this function is called when the 'send' method is called as it changes the state
             xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4 && xhr.status == 200) {
-
+                        console.log("readyState ok");
+                        document.getElementById("team").innerHTML = this.responseText;
                         xmlDoc = xhr.responseXML;
                         var team = xmlDoc.getElementsByTagName("teammember");
-                        var html =
-                                xmlDoc.getElementsByTagName("name")[theValue].childNodes[0].nodeValue + "<br>" +
+  /*                        var html =
+                              xmlDoc.getElementsByTagName("name")[theValue].childNodes[0].nodeValue + "<br>" +
                                 xmlDoc.getElementsByTagName("title")[theValue].childNodes[0].nodeValue + "<br>" +
                                 xmlDoc.getElementsByTagName("bio")[theValue].childNodes[0].nodeValue + "<br><br>";
-                        } // end for loop
 
-                        document.getElementById("team").innerHTML = html;
+*/
+                        document.getElementById("team").innerHTML = "Yo mamma!";
 
                     } // end if
 
@@ -65,7 +66,7 @@ Assignment 2
 
                 } // end function
 
-
+    //              document.getElementById("team").innerHTML = "Yo daddy!";
         } // end onload
     </script>
 </head>
@@ -102,7 +103,7 @@ Assignment 2
             <input type="button" value="Show Team Member Information" id="btn">
         </form>
 
-        <div id="team"></div>
+        <div id="team"> </div>
     </main>
 
     <footer></footer>
