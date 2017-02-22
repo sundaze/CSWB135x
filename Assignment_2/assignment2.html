@@ -26,37 +26,27 @@ Assignment 2
     </style>
 
     <script>
-    window.onload = function () {
+      function getData() {
 
             var xhr = new XMLHttpRequest();
-            var theValue;
-
-            function getData() {
-              theValue = parseInt( document.getElementById('member').value );
-              console.log(theValue);
-              xmlDoc = xhr.responseXML;
-              var team = xmlDoc.getElementsByTagName("teammember");
-              var html = "";
-              for (i = 0; i < team.length; i++) {
-                   html +=
-                      xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
-                      xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
-                      xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue + "<br><br>";
-
-               } // end for loop
-
-               document.getElementById("team").innerHTML = html;
-
-            } //end getData()
-
-            // activates button
-            var button = document.getElementById('btn').onclick = getData;
 
             // this function is called when the 'send' method is called as it changes the state
             xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
+                  // 4 = request is completed, 200 = request was fulfilled
+                  if (xhr.readyState == 4 && xhr.status == 200) {
+                      xmlDoc = xhr.responseXML;
+                      var team = xmlDoc.getElementsByTagName("teammember");
+                      var html = "";
+                      for (i = 0; i < team.length; i++) {
+                           html +=
+                              xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
+                              xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
+                              xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue + "<br><br>";
 
-                        getData(this);
+                       } // end for loop
+
+                       document.getElementById("team").innerHTML = html;
+
 
                     } // end if
 
@@ -68,8 +58,18 @@ Assignment 2
                 } // end anonynous function
                 xhr.open("GET", "team.xml", true);
                 xhr.send();
-    //              document.getElementById("team").innerHTML = "Yo daddy!";
-        } // end onload
+
+
+      } //end getData()
+
+      function int() {
+        //event listener for the button
+        document.getElementById('btn').addEventListener('click', getData, false);
+      }
+
+      //loads the function init after the DOM has been loaded
+      document.addEventListener("DOMContentLoaded", init, false);
+      
     </script>
 </head>
 
