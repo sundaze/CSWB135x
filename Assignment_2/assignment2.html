@@ -29,8 +29,11 @@ Assignment 2
     window.onload = function () {
 
             var xhr = new XMLHttpRequest();
+            function getData() {
 
-
+              console.log(document.getElementById('member').value);
+            }
+            var button = document.getElementById('btn').onclick = getData;
 
             // this function is called when the 'send' method is called as it changes the state
             xhr.onreadystatechange = function () {
