@@ -30,6 +30,13 @@ Assignment 2
 
             var xhr = new XMLHttpRequest();
 
+            var memValue = parseInt(document.getElementById('member').value);
+            if(memValue == NaN){
+              console.log("Not a number!")
+            }else {
+                console.log(memValue);
+            }
+
             // this function is called when the 'send' method is called as it changes the state
             xhr.onreadystatechange = function () {
                   // 4 = request is completed, 200 = request was fulfilled
@@ -62,14 +69,14 @@ Assignment 2
 
       } //end getData()
 
-      function int() {
+      function init() {
         //event listener for the button
         document.getElementById('btn').addEventListener('click', getData, false);
       }
 
       //loads the function init after the DOM has been loaded
       document.addEventListener("DOMContentLoaded", init, false);
-      
+
     </script>
 </head>
 
