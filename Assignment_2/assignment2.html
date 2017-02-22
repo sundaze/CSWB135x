@@ -32,26 +32,31 @@ Assignment 2
             var theValue;
 
             function getData() {
-              theValue = document.getElementById('member').value;
+              theValue = parseInt( document.getElementById('member').value );
               console.log(theValue);
-            }
+              xmlDoc = xhr.responseXML;
+              var team = xmlDoc.getElementsByTagName("teammember");
+              var html = "";
+              for (i = 0; i < team.length; i++) {
+                   html +=
+                      xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue + "<br>" +
+                      xmlDoc.getElementsByTagName("title")[i].childNodes[0].nodeValue + "<br>" +
+                      xmlDoc.getElementsByTagName("bio")[i].childNodes[0].nodeValue + "<br><br>";
+
+               } // end for loop
+
+               document.getElementById("team").innerHTML = html;
+
+            } //end getData()
+
             // activates button
             var button = document.getElementById('btn').onclick = getData;
 
             // this function is called when the 'send' method is called as it changes the state
             xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4 && xhr.status == 200) {
-                        console.log("readyState ok");
-                        document.getElementById("team").innerHTML = this.responseText;
-                        xmlDoc = xhr.responseXML;
-                        var team = xmlDoc.getElementsByTagName("teammember");
-  /*                        var html =
-                              xmlDoc.getElementsByTagName("name")[theValue].childNodes[0].nodeValue + "<br>" +
-                                xmlDoc.getElementsByTagName("title")[theValue].childNodes[0].nodeValue + "<br>" +
-                                xmlDoc.getElementsByTagName("bio")[theValue].childNodes[0].nodeValue + "<br><br>";
 
-*/
-                        document.getElementById("team").innerHTML = "Yo mamma!";
+                        getData(this);
 
                     } // end if
 
@@ -60,12 +65,9 @@ Assignment 2
                            document.getElementById("team").innerHTML = "Sorry error with request";
                     } // end else
 
-                    xhr.open("GET", "team.xml", true);
-                    xhr.send();
-
-
-                } // end function
-
+                } // end anonynous function
+                xhr.open("GET", "team.xml", true);
+                xhr.send();
     //              document.getElementById("team").innerHTML = "Yo daddy!";
         } // end onload
     </script>
@@ -103,7 +105,7 @@ Assignment 2
             <input type="button" value="Show Team Member Information" id="btn">
         </form>
 
-        <div id="team"> </div>
+        <div id="team"></div>
     </main>
 
     <footer></footer>
