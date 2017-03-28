@@ -1,0 +1,132 @@
+<!-- this is the starter file for assignment 3
+     cswb135_starter_file_assignment_3.html 
+     
+     Copyright Teresa Pelkie, 2017, Reproduction or Distribution on the Web is Prohibited
+     
+     This file is for the student use only
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSWB 135 Assignment 3 Starter File</title>
+
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            font-size: 100%;
+            color: ivory;
+        }
+        
+        #outer {
+            width: 800px;
+            margin: 50px auto;
+            border: 3px solid rgb(70, 80, 90);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px #888;
+            background: rgb(119, 136, 153);
+        }
+        
+        h3 {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            clear: left;
+            display: block;
+            font-size: 1.2em;
+            width: 100px;
+            height: 22px;
+            /* added to match default border on text box */
+            margin-bottom: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            text-align: right;
+            float: left;
+        }
+        
+        input[type=text],
+        textarea {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        
+        textarea {
+            width: 400px;
+            height: 50px;
+        }
+        
+        input:not([type=text]) {
+            display: block;
+            cursor: pointer;
+            margin-left: 130px;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        input[type=reset] {
+            margin-top: 10px;
+        }
+        
+        .clear {
+            clear: left;
+        }
+        
+        p:first-of-type {
+            color: #000;
+        }
+        
+        input[type=text]:focus,
+        textarea:focus {
+            background: aliceblue;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="outer">
+
+        <h1>Contact Us!</h1>
+        <h2>Enter the information below so that we may contact you!</h2>
+
+        <p>All fields are required</p>
+
+        <form id="frmContact" action="process.php">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone: </label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="message">Message: </label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" id="btnSend" value="Send Information" class="clear">
+
+            <input type="reset" id="btnClear" value="Clear Form">
+        </form>
+
+
+        <p id="result"> </p>
+
+
+    </div>
+</body>
+
+</html>
