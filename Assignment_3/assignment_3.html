@@ -104,13 +104,26 @@ Assignment 3
       //Encode a set of form elements as an array of name/value pairs that can be used for the data parameter of an Ajax request.
       var formData = $("#frmContact").serializeArray();
 
-
       $("#btnSend").click(function(event){
-        //Use $.get method to send data with an Ajax request.
-        $.get("process.php", formData, confirmData);
-
         //Cancel the default action of the button
         event.preventDefault();
+
+        $.ajax({
+          type: "get",
+          url: "process.php",
+          beforeSend: function() {("#result").html("Loading...");},
+          timeout: 10000,
+          error: function(xhr, status, error) {
+            alert("Error: " + xhr.status + " - " + error);
+          },
+          dataType: "text",
+          success: function(data){
+            $("#result").html("");
+            
+          }
+        }); //End ajax
+
+
       }); //End click
 
       function confirmData(data) {
