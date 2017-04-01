@@ -99,36 +99,45 @@ Assignment 3
         }
     </style>
 
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
     <script>
     $(document).ready(function (){
-      //Encode a set of form elements as an array of name/value pairs that can be used for the data parameter of an Ajax request.
-      var formData = $("#frmContact").serializeArray();
 
-      $("#btnSend").click(function(event){
-        //Cancel the default action of the button
-        event.preventDefault();
+      $("#btnSend").click(function(event)
+      {
+        console.log("jQuery button clicked");
+        //Encode a set of form elements as an array of name/value pairs that can be used for the data parameter of an Ajax request.
+        var formData = $("#frmContact").serialize();
 
         $.ajax({
+
           type: "get",
           url: "process.php",
-          beforeSend: function() {("#result").html("Loading...");},
-          timeout: 10000,
-          error: function(xhr, status, error) {
+          beforeSend: function()
+          {
+            $("#result").html("Loading...");
+          },
+          timeout: 1000,
+          error: function(jqXHR, status, error) {
             alert("Error: " + xhr.status + " - " + error);
           },
-          dataType: "text",
-          success: function(data){
+          dataType: "html",
+          success: function(){
             $("#result").html("");
-            
+        //    $("#btnSend").load(formData);
+
+
           }
         }); //End ajax
 
 
+        //Cancel the default action of the button
+        event.preventDefault();
+
       }); //End click
 
-      function confirmData(data) {
-        alert("confirmData() called.")
-      }
+
 
     }); //end jQuery
     </script>
