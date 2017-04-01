@@ -123,11 +123,21 @@ Assignment 3
             alert("Error: " + xhr.status + " - " + error);
           },
           dataType: "html",
-          success: function(){
+          success: function(formData)
+          {
             $("#result").html("");
-        //    $("#btnSend").load(formData);
-
-
+            $.get("process.php", formData);
+            //Extra Credit portion
+//            $("#outer").hide();
+/*          if($("#name").val() == "" || $("#phone").val() == "" || $("#email").val() == "" )
+            {
+                $("#outer").show();
+            }
+            else
+            {
+              $("#result").show();
+            }
+*/
           }
         }); //End ajax
 
