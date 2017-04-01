@@ -100,8 +100,21 @@ Assignment 3
     </style>
 
     <script>
-    $(document).ready(functio (){
+    $(document).ready(function (){
+      //Encode a set of form elements as an array of name/value pairs that can be used for the data parameter of an Ajax request.
+      var formData = $("#frmContact").serializeArray();
 
+      // Reference the button to be clicked
+      var btnSubmit = document.getElementById("btnSend");
+      // calls the function when the button is clicked
+      btnSubmit.onclick = function(){
+        //Use $.get method to send data with an Ajax request.
+        $.get("process.php", formData, confirmData);
+      }
+
+      function confirmData(data) {
+        alert("confirmData() called.")
+      }
 
     }); //end jQuery
     </script>
