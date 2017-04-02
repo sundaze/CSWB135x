@@ -106,47 +106,65 @@ Assignment 3
 
       $("#btnSend").click(function(event)
       {
-        console.log("jQuery button clicked");
+//        console.log("jQuery button clicked");
+        //Cancel the default action of the button
+        event.preventDefault();
         //Encode a set of form elements as an array of name/value pairs that can be used for the data parameter of an Ajax request.
         var formData = $("#frmContact").serialize();
-
+//        var userName = $("#name").val();
+//        var userPhone = $("#phone").val();
+//        var userEmail = $("#email").val();
+//        var userMessage = $("#message").val();
         $.ajax({
 
           type: "get",
           url: "process.php",
-          beforeSend: function()
+          data: formData,
+/*          beforeSend: function()
           {
             $("#result").html("Loading...");
           },
-          timeout: 1000,
-          error: function(jqXHR, status, error) {
+          timeout: 5000,
+*/          error: function(xhr, status, error) {
             alert("Error: " + xhr.status + " - " + error);
           },
           dataType: "html",
-          success: function(formData)
+          success: function(response)
           {
+            console.log("begin SUCCESS");
             $("#result").html("");
-            $.get("process.php", formData);
+
+            $.get("process.php", formData, extraCredit);
+            $("#result").html(respone);
             //Extra Credit portion
-//            $("#outer").hide();
-/*          if($("#name").val() == "" || $("#phone").val() == "" || $("#email").val() == "" )
-            {
-                $("#outer").show();
+            function extraCredit(data) {
+              console.log("begin extraCredit");
+               $("#outer h1 h2 p form").hide();
+               if($("#name").val() == "" || $("#phone").val() == "" || $("#email").val() == "" || $("#message").val() == "")
+               {
+                 $("#outer").show();
+                 console.log("extraCredit IF");
+               }
+               else
+               {
+                 $("#result").show();
+                 console.log("extraCredit ELSE");
+               }
+
+
             }
-            else
-            {
-              $("#result").show();
-            }
-*/
           }
         }); //End ajax
 
-
-        //Cancel the default action of the button
-        event.preventDefault();
-
       }); //End click
-
+      $("#btnClear").click(function()
+      {
+        $("#name").val("");
+        $("#phone").val("");
+        $("#email").val("");
+        $("#message").val("");
+        $("#result").val("");
+      }); //End click
 
 
     }); //end jQuery
