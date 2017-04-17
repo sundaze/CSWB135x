@@ -21,9 +21,14 @@ Extra Credit
 			$.getJSON(url, function(data){
 				var html = "";
 				$.each(data.items, function(i, item){
-					html += "<h2>" + item.title + "</h2>";
-					html += "<img src=" + item.media.m + ">";
-					html += "<p></p>";
+
+  				html += "</br><h2>" + item.title + "</h2></br>";
+          //Add URL as a clickable hyperlink in new tab"
+          html += "<p>URL: " + "<a href=\"" + item.link + "\" target=\"new\">" + item.link + "</a></p></br>";
+          //Add the date taken
+          html += "<p>Date taken: " + item.date_taken + "</p></br>"
+					html += "<img src=" + item.media.m + "></br>";
+
 				});
 				$("#photos").html(html);
 			});
