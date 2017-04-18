@@ -12,7 +12,10 @@ Assignment 5
   <title>All Pets Veterinary Hospital</title>
 
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <link href="assignment5.css" rel="stylesheet">
+  <link rel="stylesheet" href="assignment5.css">
+  <link rel="stylesheet" href="themes/day_night.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
@@ -28,7 +31,7 @@ Assignment 5
       <h1>All Pets Veterinary Hospital</h1>
       <div data-role="navbar">
         <ul>
-          <li><a href="#home" class="ui-btn-active" data-theme="b">Home</a></li>
+          <li><a href="#home" class="ui-btn-active ui-state-persist" data-theme="b">Home</a></li>
           <li><a href="#services" data-theme="b">Services</a></li>
           <li><a href="#contact" data-theme="b">Contact Us</a></li>
         </ul>
@@ -40,18 +43,18 @@ Assignment 5
       <p>All Pets Veterinary Hospital has been a leader in specialty veterinary care since 1990, fulfilling the need for specialty healthcare and emergency services for animals in San Diego County and Southern California.</p>
 
       <!-- begin call out quote -->
-      <div class="ui-body ui-body-a ui-corner-all ui-overlay-shadow">
+      <div class="ui-body ui-body-a ui-corner-all ui-overlay-shadow callout">
         <p>No matter how little money and how few possessions you own, having a dog makes you rich.</br>-- Louis Sabin</p>
       </div> <!-- end call out -->
 
       <!-- begin rounded image -->
-      <div class="ui-body ui-body-a ui-corner-all ui-overlay-shadow">
+      <div class="ui-body ui-body-a ui-corner-all ui-overlay-shadow center callout">
         <img src="http://www.marcgunther.com/wp-content/uploads/2015/07/PetProtection.jpg" width="260" alt=" photo of pets">
       </div>
 
     </section>
 
-    <footer data-role="footer" data-position="fixed"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
+    <footer data-role="footer" data-position="fixed" class="center"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
 <a href="tel:555-555-5555" data-icon="phone" data-role="button">555-555-5555</a>
 <a href="mailto:pets@apvh.com" data-icon="mail" data-role="button">pets@apvh.com</a>
    </footer>
@@ -65,7 +68,7 @@ Assignment 5
     <div data-role="navbar">
       <ul>
         <li><a href="#home" data-theme="b">Home</a></li>
-        <li><a href="#services" class="ui-btn-active" data-theme="b">Services</a></li>
+        <li><a href="#services" class="ui-btn-active ui-state-persist"  data-theme="b">Services</a></li>
         <li><a href="#contact" data-theme="b">Contact Us</a></li>
       </ul>
     </div>
@@ -79,34 +82,33 @@ Assignment 5
       </p>
     </div>
     <div data-role="collapsible">
-    <h3>Comprehensive Services</h3>
+      <h3>Comprehensive Services</h3>
       <p>Our hospital utilizes the latest equipment, including MRI, CAT scan, radiation therapy, digital radiography, a state-of-the-art intensive care unit, ultra-modern surgical suites, endoscopy, ultrasound, and much more to provide comprehensive specialty care for pets of all ages. Furthermore, our staff of doctors, technicians and client service representatives has exceptional training, motivation, and compassion for the pets we treat.
       </p>
     </div>
     <div data-role="collapsible">
      <h3>Compassionate Care</h3>
      <p>In summary, as part of our mission to offer high-quality specialty care for pets in the San Diego area, our hospitals boast a level of sophistication that can only be found in the most advanced human medical facilities. We strive for exceptional client service and compassionate care for patients. Since most of us have pets of our own, we understand the strong bond that our clients have with their pets, and realize that they are part of the family.
-    </p>
-  </div>
-  <div data-role="collapsible">
-    <h3>Our Facility</h3>
-    <p>Our veterinary  hospital in features:
-    </p>
+     </p>
+    </div>
+    <div data-role="collapsible">
+        <h3>Our Facility</h3>
+        <p>Our veterinary  hospital in features:</p>
 
-     <ul>
-       <li>Three stories - 26,500 sq ft</li>
-       <li>Five treatment wards</li>
-       <li>18 exam rooms</li>
-       <li>Six operating rooms</li>
-       <li>Ultrasound, Endoscopy, electrodiagnostics, and dentistry</li>
-       <li>State of the art ICU</li>
-       <li>Full Service Laboratory</li>
-       <li>Complete Oncology Center</li>
-    </ul>
-  </div>
+        <ul>
+           <li>Three stories - 26,500 sq ft</li>
+           <li>Five treatment wards</li>
+           <li>18 exam rooms</li>
+           <li>Six operating rooms</li>
+           <li>Ultrasound, Endoscopy, electrodiagnostics, and dentistry</li>
+           <li>State of the art ICU</li>
+           <li>Full Service Laboratory</li>
+           <li>Complete Oncology Center</li>
+        </ul>
+    </div>
 
   </section>
-  <footer data-role="footer" data-position="fixed"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
+  <footer data-role="footer" data-position="fixed" class="center"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
 <a href="tel:555-555-5555" data-icon="phone" data-role="button">555-555-5555</a>
 <a href="mailto:pets@apvh.com" data-icon="mail" data-role="button">pets@apvh.com</a>
  </footer>
@@ -122,14 +124,14 @@ Assignment 5
         <ul>
           <li><a href="#home" data-theme="b">Home</a></li>
           <li><a href="#services" data-theme="b">Services</a></li>
-          <li><a href="#contact" class="ui-btn-active" data-theme="b">Contact Us</a></li>
+          <li><a href="#contact" class="ui-btn-active ui-state-persist" data-theme="b">Contact Us</a></li>
         </ul>
       </div>
     </header>  <!-- end Nav Bar -->
 
     <section class="ui-content" role="main">
 
-      <p>If you're looking for high-quality specialty care for your pets, call us at <a href="tel:555-555-5555" data-icon="phone">555-555-5555</a>or email us at<a href="mailto:pets@apvh.com" data-icon="mail">pets@apvh.com</a>for an appointment.
+      <p>If you're looking for high-quality specialty care for your pets, call us at <a href="tel:555-555-5555" data-icon="phone">555-555-5555</a> or email us at <a href="mailto:pets@apvh.com" data-icon="mail">pets@apvh.com</a> for an appointment.
       </p>
       <p>
       <address>
@@ -140,7 +142,7 @@ Assignment 5
       </address>
       </p>
     </section>
-    <footer data-role="footer" data-position="fixed"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
+    <footer data-role="footer" data-position="fixed" class="center"><h4>Copyright &copy; 2017 All Pets Veterinary Hospital</h4>
 <a href="tel:555-555-5555" data-icon="phone" data-role="button">555-555-5555</a>
 <a href="mailto:pets@apvh.com" data-icon="mail" data-role="button">pets@apvh.com</a>
    </footer>
