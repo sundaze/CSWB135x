@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Distance Converter</title>
+    <meta name="description" content="Distance Converter for Athletes">
+    <meta name="author" content="CSWB135">
+
+
+    <style>
+        form {
+            margin: 20px auto;
+        }
+        
+        output {
+            color: red;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#btn_milestometers').on('click', convertMilesToMeters);
+            $('#btn_meterstomiles').on('click', convertMetersToMiles);
+            $('#btn_milestokilometers').on('click', convertMilesToKilometers);
+            $('#btn_kilometerstomiles').on('click', convertKilometersToMiles);
+            $('#btn_clearall').on('click', clearAll);
+        }); //end ready  
+
+       
+        // FUNCTIONS
+        
+        // Miles to Meters
+        function convertMilesToMeters() {
+            $('#o_milestometers').val(' '); // clear error message
+           
+            var num = $('#milestometers').val();
+           
+            if (num == "") {
+                $('#o_milestometers').val('Enter a number');
+            } else {
+                var result = num / 0.00062137;
+
+                $('#o_milestometers').val(result.toFixed(2) + " meters");
+            }
+        }
+
+
+
+        // Meters to Miles
+        function convertMetersToMiles() {
+            $('#o_meterstomiles').val(' '); // clear error message
+
+            var num = $('#meterstomiles').val();
+
+            if (num == "") {
+                $('#o_meterstomiles').val('Enter a number');
+            } else {
+                var result = num * 0.00062137;
+                $('#o_meterstomiles').val(result.toFixed(2) + " miles");
+            }
+        }
+
+        // Miles to Kilometers
+        function convertMilesToKilometers() {
+            $('#o_milestokilometers').val(' '); // clear error message
+
+            var num = $('#milestokilometers').val();
+
+            if (num == "") {
+                $('#o_milestokilometers').val('Enter a number');
+            } else {
+                var result = num / 0.62137;
+                $('#o_milestokilometers').val(result.toFixed(2) + " kilometers");
+            }
+        }
+
+
+        // Kilometers to Miles
+        function convertKilometersToMiles() {
+            $('#o_kilometerstomiles').val(' '); // clear error message
+
+            var num = $('#kilometerstomiles').val();
+
+            if (num == "") {
+                $('#o_kilometerstomiles').val('Enter a number');
+            } else {
+                var result = num * 0.62137;
+                $('#o_kilometerstomiles').val(result.toFixed(2) + " miles");
+            }
+        }
+
+
+        // Clear all Values
+        function clearAll() {
+            //jquery does not have a reset() method but JS does, so we need to make
+            //it look like a JS object with the index position
+            $('#frm_milestometers')[0].reset();
+            $('#frm_meterstomiles')[0].reset();
+            $('#frm_milestokilometers')[0].reset();
+            $('#frm_kilometerstomiles')[0].reset();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Distance Converter for Athletes</h1>
+
+    <form id='frm_milestometers'>
+        <label>Miles to Meters</label>
+        <input id="milestometers" type="number" min="1">
+        <input type="button" id="btn_milestometers" value="Calculate">
+        <input type="reset" value="Clear">
+        <output id="o_milestometers" for="milestometers"></output>
+    </form>
+
+
+    <form id="frm_meterstomiles">
+        <label>Meters to Miles</label>
+        <input id="meterstomiles" type="number" min="1">
+        <input type="button" id="btn_meterstomiles" value="Calculate">
+        <input type="reset" value="Clear">
+        <output id="o_meterstomiles" for="meterstomiles"></output>
+    </form>
+
+
+    <form id="frm_milestokilometers">
+        <label>Miles to Kilometers</label>
+        <input id="milestokilometers" type="number" min="1">
+        <input type="button" id="btn_milestokilometers" value="Calculate">
+        <input type="reset" value="Clear">
+        <output id="o_milestokilometers" for="milestokilometers"></output>
+    </form>
+
+
+    <form id="frm_kilometerstomiles">
+        <label>Kilometers to Miles</label>
+        <input id="kilometerstomiles" type="number" min="1">
+        <input type="button" id="btn_kilometerstomiles" value="Calculate">
+        <input type="reset" value="Clear">
+        <output id="o_kilometerstomiles" for="kilometerstomiles"></output>
+    </form>
+
+   
+    <form>
+        <input type="button" id="btn_clearall" value="Clear All Values">
+    </form>
+
+</body>
+
+</html>
