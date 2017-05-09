@@ -17,12 +17,15 @@ Assignment 6
     <meta name="description" content="Distance Converter for Athletes">
     <meta name="author" content="CSWB135">
 
-    <link rel="apple-touch-icon" href="/custom_icon.png">   <!-- link to app icon -->
+    <link rel="apple-touch-icon" href="/1143-200.png">   <!-- link to app icon -->
     <link rel="stylesheet" href="assignment6.css">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -111,13 +114,14 @@ Assignment 6
 </head>
 
 <body>
-  <div data-role="page">
+  <div data-role="page" id="home">
 
     <header data-role="header" data-position="fixed">
       <h1>Distance Converter for Athletes</h1>
     </header>
 
     <section class="ui-content" role="main">
+
       <form id='frm_milestometers'>
           <label>Miles to Meters</label>
           <input id="milestometers" type="number" min="1">
@@ -152,12 +156,16 @@ Assignment 6
           <input type="reset" value="Clear">
           <output id="o_kilometerstomiles" for="kilometerstomiles"></output>
       </form>
-    </section> <!-- end section role=main -->
-    <footer data-role="footer" data-position="fixed" class="center">
+
       <form>
           <input type="button" id="btn_clearall" value="Clear All Values">
       </form>
-    </footer> <!--end footer -->
+
+    </section> <!-- end section role=main -->
+
+    <footer data-role="footer" data-position="fixed" class="center">
+    </footer>
+
   </div> <!--end div data-role=page -->
 </body>
 
