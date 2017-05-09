@@ -1,3 +1,9 @@
+<!--
+Neal Domingo
+CSWB 135
+Spring 2017
+Assignment 6
+-->
 <!doctype html>
 
 <html lang="en">
@@ -11,16 +17,10 @@
     <meta name="description" content="Distance Converter for Athletes">
     <meta name="author" content="CSWB135">
 
-
-    <style>
-        form {
-            margin: 20px auto;
-        }
-        
-        output {
-            color: red;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="/custom_icon.png">   <!-- link to app icon -->
+    <link rel="stylesheet" href="assignment6.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -31,17 +31,17 @@
             $('#btn_milestokilometers').on('click', convertMilesToKilometers);
             $('#btn_kilometerstomiles').on('click', convertKilometersToMiles);
             $('#btn_clearall').on('click', clearAll);
-        }); //end ready  
+        }); //end ready
 
-       
+
         // FUNCTIONS
-        
+
         // Miles to Meters
         function convertMilesToMeters() {
             $('#o_milestometers').val(' '); // clear error message
-           
+
             var num = $('#milestometers').val();
-           
+
             if (num == "") {
                 $('#o_milestometers').val('Enter a number');
             } else {
@@ -111,49 +111,54 @@
 </head>
 
 <body>
+  <div data-role="page">
 
-    <h1>Distance Converter for Athletes</h1>
+    <header data-role="header" data-position="fixed">
+      <h1>Distance Converter for Athletes</h1>
+    </header>
 
-    <form id='frm_milestometers'>
-        <label>Miles to Meters</label>
-        <input id="milestometers" type="number" min="1">
-        <input type="button" id="btn_milestometers" value="Calculate">
-        <input type="reset" value="Clear">
-        <output id="o_milestometers" for="milestometers"></output>
-    </form>
-
-
-    <form id="frm_meterstomiles">
-        <label>Meters to Miles</label>
-        <input id="meterstomiles" type="number" min="1">
-        <input type="button" id="btn_meterstomiles" value="Calculate">
-        <input type="reset" value="Clear">
-        <output id="o_meterstomiles" for="meterstomiles"></output>
-    </form>
+    <section class="ui-content" role="main">
+      <form id='frm_milestometers'>
+          <label>Miles to Meters</label>
+          <input id="milestometers" type="number" min="1">
+          <input type="button" id="btn_milestometers" value="Calculate">
+          <input type="reset" value="Clear">
+          <output id="o_milestometers" for="milestometers"></output>
+      </form>
 
 
-    <form id="frm_milestokilometers">
-        <label>Miles to Kilometers</label>
-        <input id="milestokilometers" type="number" min="1">
-        <input type="button" id="btn_milestokilometers" value="Calculate">
-        <input type="reset" value="Clear">
-        <output id="o_milestokilometers" for="milestokilometers"></output>
-    </form>
+      <form id="frm_meterstomiles">
+          <label>Meters to Miles</label>
+          <input id="meterstomiles" type="number" min="1">
+          <input type="button" id="btn_meterstomiles" value="Calculate">
+          <input type="reset" value="Clear">
+          <output id="o_meterstomiles" for="meterstomiles"></output>
+      </form>
 
 
-    <form id="frm_kilometerstomiles">
-        <label>Kilometers to Miles</label>
-        <input id="kilometerstomiles" type="number" min="1">
-        <input type="button" id="btn_kilometerstomiles" value="Calculate">
-        <input type="reset" value="Clear">
-        <output id="o_kilometerstomiles" for="kilometerstomiles"></output>
-    </form>
+      <form id="frm_milestokilometers">
+          <label>Miles to Kilometers</label>
+          <input id="milestokilometers" type="number" min="1">
+          <input type="button" id="btn_milestokilometers" value="Calculate">
+          <input type="reset" value="Clear">
+          <output id="o_milestokilometers" for="milestokilometers"></output>
+      </form>
 
-   
-    <form>
-        <input type="button" id="btn_clearall" value="Clear All Values">
-    </form>
 
+      <form id="frm_kilometerstomiles">
+          <label>Kilometers to Miles</label>
+          <input id="kilometerstomiles" type="number" min="1">
+          <input type="button" id="btn_kilometerstomiles" value="Calculate">
+          <input type="reset" value="Clear">
+          <output id="o_kilometerstomiles" for="kilometerstomiles"></output>
+      </form>
+    </section> <!-- end section role=main -->
+    <footer data-role="footer" data-position="fixed" class="center">
+      <form>
+          <input type="button" id="btn_clearall" value="Clear All Values">
+      </form>
+    </footer> <!--end footer -->
+  </div> <!--end div data-role=page -->
 </body>
 
 </html>
