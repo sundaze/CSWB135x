@@ -1,0 +1,232 @@
+<!--
+Neal Domingo
+CSWB 135
+Spring 2017
+Assignment 7
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ocean Resort and Marina</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #d5dcec;
+            font-family: Arial, Verdana, sans-serif;
+            font-size: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /*  Outer container  */
+        #outer {
+            width: 960px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 3px 3px 3px #666;
+        }
+
+        header {
+            background-color: #5d5f93;
+            color: #FFFFFF;
+            font-family: Georgia, serif;
+        }
+
+        h1 {
+            font-size: 2em;
+            background-image: url(images/bg-photo.jpg);
+            background-repeat: no-repeat;
+            background-position: right top;
+            padding: 18px;
+            margin-bottom: 0;
+        }
+
+        /* navigation */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            color: #000;
+        }
+
+        nav a:hover {
+            color: #5d5f93;
+        }
+
+        nav {
+            background-color: #c7c8c3;
+            border-top: 1px solid #000;
+        }
+
+        /* clear floats */
+        nav:after,
+        aside:after,
+        main ul:after,
+        footer:before {
+            content: " ";
+            height: 1px;
+            display: block;
+            clear: left;
+        }
+
+        h2,
+        h3 {
+            color: #5d5f93;
+        }
+
+        /* left column */
+        main {
+            float: left;
+            width: 720px;
+            padding: 15px 5px;
+        }
+
+        main ul {
+            line-height: 180%;
+        }
+
+        /* right column */
+        aside {
+            width: 240px;
+            margin-left: 720px;
+            padding: 15px 5px;
+            text-align: center;
+        }
+
+        /* images */
+        aside figure {
+            margin: 5px auto;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #c7c8c3;
+            border-top: 1px solid #000;
+            margin-top: 10px;
+        }
+
+        /*  *************************************************
+            **************  MEDIA QUERIES Here *******************/
+            @media only screen and (min-width: 320px) {
+                body {
+                    background-color: green;
+                }
+            }
+
+            @media only screen and (min-width: 550px) {
+                body {
+                    background-color: yellow;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                body {
+                    background-color: orange;
+                }
+            }
+
+            @media only screen and (min-width: 960px) {
+                body {
+                    background-color: red;
+                }
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="outer">
+
+        <header>
+            <h1>Ocean Resort and Marina</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Accommodations</a></li>
+                <li><a href="#">Ammenities</a></li>
+                <li><a href="#">Reservations</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <h2>Enjoy the Views and Amenities</h2>
+            <p>Ocean Resort and Marina offers a special experience on the California Coast. Relax in serenity with panoramic views of the Pacific Ocean.</p>
+
+            <ul>
+                <li>Rooms overlooking the ocean</li>
+                <li>Activities for everyone</li>
+                <li>Variety of dining experiences</li>
+                <li>Heated pool, spa, and gym</li>
+                <li>Nearby tourist attractions</li>
+            </ul>
+
+            <h3>Value</h3>
+            <p>With so many desirable amenities, business and pleasure become a memorable vacation. Guests are greeted with breathtaking tropical views, superior services and modern luxuries.</p>
+
+            <h3>Quality</h3>
+            <p>We have two refreshing pools and surround yourself with flowing streams and waterfalls. With private cabanas, a poolside bar and a separate play area just for the kids, you'll feel like you've found your own private island.</p>
+
+        </main>
+
+        <aside>
+            <figure>
+                <img src="images/photo_view.jpg">
+                <figcaption>Great views</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo_room.jpg">
+                <figcaption>Spacious rooms</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo_pool.jpg">
+                <figcaption>Heated pool</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo_bay.jpg">
+                <figcaption>Water sports</figcaption>
+            </figure>
+        </aside>
+
+
+        <footer>
+            Copyright &copy; 2015 Ocean Resort and Marina
+        </footer>
+
+    </div> <!-- end outer wrapper -->
+
+</body>
+
+</html>
