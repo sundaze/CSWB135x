@@ -115,26 +115,53 @@ footer {
 
 /*  *************************************************
     **************  MEDIA QUERIES Here *******************/
-    @media only screen and (min-width: 320px) {
+    /* iPad landscape */
+    @media only screen and (max-width: 1024px) {
+      #outer {
+          width: 100%;
+
+      }
         body {
-            background-color: green;
+            background-color: red;
+        }
+        main {
+            float: left;
+            width: 60%;
+            padding: 15px 5px;
+        }
+        aside {
+            width: 40%;
+            margin-left: 500px;
+            padding: 15px 5px;
+            text-align: center;
         }
     }
 
-    @media only screen and (min-width: 550px) {
-        body {
-            background-color: yellow;
-        }
-    }
-
-    @media only screen and (min-width: 768px) {
+    /* iPad portrait */
+    @media only screen and (max-width: 768px) {
         body {
             background-color: orange;
         }
+        main {
+            float: left;
+            width: 100%;
+            padding: 15px 5px;
+            background-color: #fff;
+        }
+        aside {
+            float:right;
+            width: 100%;
+            padding: 15px 5px;
+            text-align: center;
+            background-color: #fff;
+        }
+
     }
 
-    @media only screen and (min-width: 960px) {
+
+    /* small devices/ phones */
+    @media only screen and (max-width: 600px) {
         body {
-            background-color: red;
+            background-color: yellow;
         }
     }
