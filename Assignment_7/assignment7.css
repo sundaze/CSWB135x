@@ -1,0 +1,140 @@
+/*Styles for assignment7.html */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d5dcec;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*  Outer container  */
+#outer {
+    width: 960px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #666;
+}
+
+header {
+    background-color: #5d5f93;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    font-size: 2em;
+    background-image: url(images/bg-photo.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding: 18px;
+    margin-bottom: 0;
+}
+
+/* navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    color: #000;
+}
+
+nav a:hover {
+    color: #5d5f93;
+}
+
+nav {
+    background-color: #c7c8c3;
+    border-top: 1px solid #000;
+}
+
+/* clear floats */
+nav:after,
+aside:after,
+main ul:after,
+footer:before {
+    content: " ";
+    height: 1px;
+    display: block;
+    clear: left;
+}
+
+h2,
+h3 {
+    color: #5d5f93;
+}
+
+/* left column */
+main {
+    float: left;
+    width: 720px;
+    padding: 15px 5px;
+}
+
+main ul {
+    line-height: 180%;
+}
+
+/* right column */
+aside {
+    width: 240px;
+    margin-left: 720px;
+    padding: 15px 5px;
+    text-align: center;
+}
+
+/* images */
+aside figure {
+    margin: 5px auto;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #c7c8c3;
+    border-top: 1px solid #000;
+    margin-top: 10px;
+}
+
+/*  *************************************************
+    **************  MEDIA QUERIES Here *******************/
+    @media only screen and (min-width: 320px) {
+        body {
+            background-color: green;
+        }
+    }
+
+    @media only screen and (min-width: 550px) {
+        body {
+            background-color: yellow;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        body {
+            background-color: orange;
+        }
+    }
+
+    @media only screen and (min-width: 960px) {
+        body {
+            background-color: red;
+        }
+    }
